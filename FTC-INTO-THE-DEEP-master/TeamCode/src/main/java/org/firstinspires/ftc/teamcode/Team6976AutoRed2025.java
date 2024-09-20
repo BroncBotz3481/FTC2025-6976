@@ -14,8 +14,11 @@ public class Team6976AutoRed2025 extends LinearOpMode {
         robot.Map(hardwareMap);
         waitForStart();
 
-        moveForward(0.4, 1650); //moves forward
-        
+        moveForward(0.4, 1000); //moves forward
+        moveRight(0.4, 0700);   //moves right
+        moveForward(0.4, 1500); //moves forward
+
+
 
     }
 
@@ -52,5 +55,15 @@ public class Team6976AutoRed2025 extends LinearOpMode {
         robot.DriveRightBack.setPower(0);
         robot.DriveLeftBack.setPower(0);
     }
-
+    public void moveRight (double power, int time){
+        robot.DriveRightFront.setPower(power);
+        robot.DriveLeftFront.setPower(-power);
+        robot.DriveRightBack.setPower(-power);
+        robot.DriveRightBack.setPower(power);
+        sleep(time);
+        robot.DriveRightFront.setPower(0);
+        robot.DriveLeftFront.setPower(0);
+        robot.DriveRightBack.setPower(0);
+        robot.DriveRightBack.setPower(0);
+    }
 }
