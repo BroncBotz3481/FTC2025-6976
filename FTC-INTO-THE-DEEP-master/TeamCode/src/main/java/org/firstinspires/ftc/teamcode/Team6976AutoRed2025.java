@@ -1,4 +1,7 @@
 package org.firstinspires.ftc.teamcode;
+/* This should theoretically work on both the red and blue sides of the field, and it really only
+depends on if we're on the right side or the left side of the field, relative to the
+driver/operator/coach area, of course.*/
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -13,7 +16,7 @@ public class Team6976AutoRed2025 extends LinearOpMode {
     public void runOpMode() {
         robot.Map(hardwareMap);
         waitForStart();
-
+        //This should park. Maybe.
         moveForward(0.4, 1000); //moves forward
         moveRight(0.4, 0700);   //moves right
         moveForward(0.4, 1500); //moves forward
