@@ -32,10 +32,13 @@ public class Team6976TeleOp2025 extends LinearOpMode {
         while (opModeIsActive()) {
             boolean speedslow = gamepad1.right_bumper;
             double mag = speedslow ? 0.5 : 1.0;
-
+            //Drivetrain controls (Controller 1)
             double y = gamepad1.left_stick_y; // Remember, this is reversed!
             double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x;
+            // Arm controls (Controller 2)
+            double y2 = gamepad2.left_stick_y;
+            double y3 = gamepad2.right_stick_y;
 
 
           /*  if (robot.Touched.isPressed()) {
@@ -63,6 +66,19 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.DriveLeftBack.setPower(backLeftPower * mag);
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * mag);
+
+            boolean ArmSlow = gamepad2.a;
+            double slow = ArmSlow ? 0.55 : 1;
+            boolean ArmFast = gamepad2.b;
+            double fast = ArmFast ? 10 : 1;
+            boolean SlidesFast = gamepad2.x;
+            double fast2 = SlidesFast ? 1 : 10;
+
+            double armPos = gamepad2.left_stick_y;
+            robot.Arm1.setPower(armPos * 0.6 * slow * fast);
+            double slidesPos = gamepad2.right_stick_y;
+            robot.Slides.setPower(slidesPos * 0.6 * fast2);
+
 
 
 
