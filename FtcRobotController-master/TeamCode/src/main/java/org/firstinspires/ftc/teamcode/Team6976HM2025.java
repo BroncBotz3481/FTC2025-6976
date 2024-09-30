@@ -11,11 +11,17 @@ import com.qualcomm.robotcore.hardware.NormalizedRGBA;
 import com.qualcomm.robotcore.hardware.SwitchableLight;
 
 public class Team6976HM2025 {
+
     public DcMotor DriveRightBack = null;
+
     public DcMotor DriveLeftBack = null;
+
     public DcMotor DriveLeftFront = null;
+
     public DcMotor DriveRightFront = null;
+
     public DcMotor Arm1 = null;
+
     public DcMotor Slides = null;
 
 

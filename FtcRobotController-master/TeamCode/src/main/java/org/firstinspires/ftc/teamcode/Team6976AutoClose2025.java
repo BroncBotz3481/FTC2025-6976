@@ -6,8 +6,8 @@ driver/operator/coach area, of course.*/
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
-@Autonomous (name="Team6976AutoRed2025", group="6976")
-public class Team6976AutoRed2025 extends LinearOpMode {
+@Autonomous (name="Team6976AutoClose2025", group="6976")
+public class Team6976AutoClose2025 extends LinearOpMode {
 
     Team6976HM2025 robot = new Team6976HM2025();
     ElapsedTime Time = new ElapsedTime();
