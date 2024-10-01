@@ -74,8 +74,8 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             boolean SlidesFast = gamepad2.x;
             double fast2 = SlidesFast ? 1 : 10;
 
-            double armPos = gamepad2.left_stick_y;
-            robot.Arm1.setPower(armPos * 0.6 * slow * fast);
+            double armPos = -gamepad2.left_stick_y;
+            robot.Arm1.setPower(armPos * 0.4 * slow * fast);
             double slidesPos = gamepad2.right_stick_y;
             robot.Slides.setPower(slidesPos * 0.6 * fast2);
 
