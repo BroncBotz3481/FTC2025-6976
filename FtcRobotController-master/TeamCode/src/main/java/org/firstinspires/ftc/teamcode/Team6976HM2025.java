@@ -24,6 +24,8 @@ public class Team6976HM2025 {
 
     public DcMotor Slides = null;
 
+    public Servo intake = null;
+
 
 //I fixed it
 
@@ -92,7 +94,7 @@ public class Team6976HM2025 {
 //        Arm2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 //        Arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-//        Intake = hwMap.get(Servo.class, "Servo1");
+        intake = hwMap.get(Servo.class, "intake");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 

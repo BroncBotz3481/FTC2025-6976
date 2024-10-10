@@ -23,6 +23,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
         robot.DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        robot.inake.setPosition.(0.5);
 //        robot.Intake.setPosition(0.3);
 
         int count = 0;
@@ -78,6 +79,13 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.Arm1.setPower(armPos * 0.4 * slow * fast);
             double slidesPos = gamepad2.right_stick_y;
             robot.Slides.setPower(slidesPos * 0.6 * fast2);
+
+            if (gamepad2.right_bumper){
+                robot.inake.setPosition.(0.5);
+            }
+            if (gamepad2.left_bumper){
+                robot.inake.setPosition.(0);
+            }
 
 
 
