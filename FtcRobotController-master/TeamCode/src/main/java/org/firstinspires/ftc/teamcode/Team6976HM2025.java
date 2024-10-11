@@ -94,7 +94,7 @@ public class Team6976HM2025 {
 //        Arm2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 //        Arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        intake = hwMap.get(Servo.class, "Intake");
+        Intake = hwMap.get(Servo.class, "Intake");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 
