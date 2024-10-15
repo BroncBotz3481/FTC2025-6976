@@ -24,7 +24,7 @@ public class Team6976HM2025 {
 
     public DcMotor Slides = null;
 
-    public Servo intake = null;
+    public Servo Intake = null;
 
 
 //I fixed it
