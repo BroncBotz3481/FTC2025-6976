@@ -26,6 +26,7 @@ public class Team6976HM2025 {
 
     public Servo Intake = null;
 
+    public CRServo Claw_Tilt = null;
 
 //I fixed it
 
@@ -95,6 +96,8 @@ public class Team6976HM2025 {
 //        Arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         Intake = hwMap.get(Servo.class, "Intake");
+
+        Claw_Tilt = hwMap.get(CRServo.class, "Claw_Tilt");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 
