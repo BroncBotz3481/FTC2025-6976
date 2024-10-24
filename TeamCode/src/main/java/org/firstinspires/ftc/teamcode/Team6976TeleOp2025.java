@@ -87,21 +87,17 @@ public class Team6976TeleOp2025 extends LinearOpMode {
                 robot.Intake.setPosition(0);
             }
 
-            double clawPos = -gamepad2.left_trigger;
-            double clawPos2 = gamepad2.right_trigger;
-            if (gamepad2.left_trigger < 0.5){
-                clawPos = -gamepad2.left_trigger;
+
+            if (gamepad2.left_trigger > 0.5){
+                robot.clawTilt.setPower(-1);
             }
-            else{
-                clawPos = 1;
+            robot.clawTilt.setPower(0);
+
+            if (gamepad2.right_trigger > 0.5){
+                robot.clawTilt.setPower(1);
             }
-            if (gamepad2.right_trigger < 0.5){
-                clawPos2 = gamepad2.right_trigger;
-            }
-            else{
-                clawPos2 = 0;
-            }
-            robot.Claw_Tilt.setPower(clawPos * clawPos2 * 1);
+            robot.clawTilt.setPower(0);
+
 
 
 
