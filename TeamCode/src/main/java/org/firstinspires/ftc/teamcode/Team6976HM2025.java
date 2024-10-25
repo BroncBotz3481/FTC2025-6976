@@ -97,7 +97,7 @@ public class Team6976HM2025 {
 
         Intake = hwMap.get(Servo.class, "Intake");
 
-        clawTilt = hwMap.get(CRServo.class, "Claw_Tilt");
+        clawTilt = hwMap.get(CRServo.class, "clawTilt");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 
