@@ -17,11 +17,7 @@ public class Team6976AutoFar2025 extends LinearOpMode {
         robot.Map(hardwareMap);
         waitForStart();
         //This should park. Maybe.
-        moveForward(0.4, 1000); //moves forward
-        moveRight(0.4, 0700);   //moves right
-        moveForward(0.4, 1500); //moves forward
-        moveLeft(0.4, 0600); //moves left
-
+        moveRight(0.5, 4000);
 
 
     }

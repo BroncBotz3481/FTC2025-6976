@@ -88,12 +88,12 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             }
 
 
-            if (gamepad2.left_trigger > 0.5){
+            while (gamepad2.left_trigger > 0.3){
                 robot.clawTilt.setPower(-1);
             }
             robot.clawTilt.setPower(0);
 
-            if (gamepad2.right_trigger > 0.5){
+            while (gamepad2.right_trigger > 0.3){
                 robot.clawTilt.setPower(1);
             }
             robot.clawTilt.setPower(0);
