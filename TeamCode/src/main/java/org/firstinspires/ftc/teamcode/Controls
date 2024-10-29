@@ -11,3 +11,8 @@ Right joystick up/down: Viper Slides extend/retract
 A button: Arm Tilts slow (Good for precise movements)
 B button: Arm Tilts fast (Powerful enough to hang)
 X button: Viper Slides fast
+    Claw Controls:
+        Left Bumper: Open claw
+        Right Bumper: Close claw
+        Left Trigger: Tilt claw down
+        Right Trigger: Tilt claw up
