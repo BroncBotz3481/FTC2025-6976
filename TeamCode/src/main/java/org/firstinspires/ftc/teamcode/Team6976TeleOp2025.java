@@ -79,7 +79,9 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.Arm1.setPower(armPos * 0.4 * slow * fast);
             double slidesPos = -gamepad2.right_stick_y;
             robot.Slides.setPower(slidesPos * 0.6 * fast2);
-
+            double wristPos = gamepad2.right_stick_x;
+            robot.clawTilt.setPower(wristPos);
+            
             if (gamepad2.right_bumper){
                 robot.Intake.setPosition(0);
             }
