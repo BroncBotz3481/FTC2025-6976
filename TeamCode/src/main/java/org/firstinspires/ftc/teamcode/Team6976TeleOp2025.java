@@ -76,11 +76,15 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             double fast2 = SlidesFast ? 10 : 1;
 
             double armPos = -gamepad2.left_stick_y;
-            robot.Arm1.setPower(armPos * 0.4 * slow * fast);
+            robot.Arm1.setPower(armPos * 0.6 * slow * fast);
             double slidesPos = -gamepad2.right_stick_y;
+<<<<<<< Updated upstream
             robot.Slides.setPower(slidesPos * 0.6 * fast2);
             double wristPos = gamepad2.right_stick_x;
             robot.clawTilt.setPower(wristPos);
+=======
+            robot.Slides.setPower(slidesPos * 0.8 * fast2);
+>>>>>>> Stashed changes
 
             if (gamepad2.right_bumper){
                 robot.Intake.setPosition(0);
@@ -90,13 +94,13 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             }
 
 
-            while (gamepad2.left_trigger > 0.3){
-                robot.clawTilt.setPower(gamepad2.left_trigger);
+            while (gamepad2.right_trigger > 0.3){
+                robot.clawTilt.setPower(gamepad2.right_trigger);
             }
             robot.clawTilt.setPower(0);
 
-            while (gamepad2.right_trigger > 0.3){
-                robot.clawTilt.setPower(-gamepad2.right_trigger);
+            while (gamepad2.left_trigger > 0.3){
+                robot.clawTilt.setPower(-gamepad2.left_trigger);
             }
             robot.clawTilt.setPower(0);
 
