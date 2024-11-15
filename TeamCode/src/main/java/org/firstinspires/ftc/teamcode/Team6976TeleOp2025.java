@@ -25,7 +25,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
         robot.DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.Intake.setPosition(0);
+        robot.Intake.setPosition(intakeClose);
 //        robot.Intake.setPosition(0.3);
 
         int count = 0;
