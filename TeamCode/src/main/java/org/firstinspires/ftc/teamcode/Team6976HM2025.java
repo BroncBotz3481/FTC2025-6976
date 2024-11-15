@@ -28,10 +28,6 @@ public class Team6976HM2025 {
 
     public CRServo clawTilt = null;
 
-//I fixed it
-
-
-
     //public NormalizedColorSensor ColorSensor = null;
 
 
