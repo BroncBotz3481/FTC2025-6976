@@ -15,19 +15,20 @@ public class Team6976AutoClose2025 extends LinearOpMode {
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
+        robot.Intake.setPosition(0);
         waitForStart();
         //This should park. Maybe.
-        moveRight(0.4, 1200);   //moves right
+        moveForward(0.4, 1200);   //moves right
 
 
 
     }
 
     public void moveForward (double power, int time) {
-        robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftFront.setPower(-power);
-        robot.DriveRightBack.setPower(-power);
-        robot.DriveLeftBack.setPower(-power);
+        robot.DriveRightFront.setPower(power);
+        robot.DriveLeftFront.setPower(power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(power);
         sleep(time);
         robot.DriveRightFront.setPower(0);
         robot.DriveLeftFront.setPower(0);
