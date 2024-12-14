@@ -37,7 +37,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             double mag = speedslow ? 0.5 : 1.0;
             //Drivetrain controls (Controller 1)
             double y = gamepad1.left_stick_y; // Remember, this is reversed!
-            double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
+            double x = gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x;
             // Arm controls (Controller 2)
             double y2 = gamepad2.left_stick_y;
