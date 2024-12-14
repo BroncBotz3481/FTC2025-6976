@@ -18,7 +18,7 @@ public class Team6976AutoClose2025 extends LinearOpMode {
         robot.Intake.setPosition(0);
         waitForStart();
         //This should park. Maybe.
-        moveForward(0.4, 1200);   //moves right
+        moveForward(0.5, 1400);   //moves right
 
 
 
