@@ -11,7 +11,10 @@ public class Team6976TeleOp2025 extends LinearOpMode {
 
     public static double intakeClose = 0;
     public static double intakeOpen = 0.5;
-
+    public static double defaultArmSpeed = 0.6;
+    public static double defaultSlideSpeed = 0.9;
+    public static double slowArmModifier = 0.55;
+    public static double DpadPower = 0.4;
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
@@ -70,25 +73,24 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * mag);
 
+
+            // Arm and Slide Power Modifiers
             boolean ArmSlow = gamepad2.a;
-            double slow = ArmSlow ? 0.55 : 1;
+            double slow = ArmSlow ? slowArmModifier : 1;
             boolean ArmFast = gamepad2.b;
             double fast = ArmFast ? 10 : 1;
             boolean SlidesFast = gamepad2.x;
             double fast2 = SlidesFast ? 10 : 1;
 
+            //Setting the powers
             double armPos = -gamepad2.left_stick_y;
-            robot.Arm1.setPower(armPos * 0.6 * slow * fast);
+            robot.Arm1.setPower(armPos * defaultArmSpeed * slow * fast);
 
             double slidesPos = -gamepad2.right_stick_y;
-            robot.Slides.setPower(slidesPos * 0.6 * fast2);
-
-            double wristPos = gamepad2.right_stick_x;
-            robot.clawTilt.setPower(wristPos);
-
-            robot.Slides.setPower(slidesPos * 0.9 * fast2);
+            robot.Slides.setPower(slidesPos * defaultSlideSpeed * fast2);
 
 
+            //Intake
             if (gamepad2.right_bumper){
                 robot.Intake.setPosition(intakeClose);
             }
@@ -96,7 +98,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
                 robot.Intake.setPosition(intakeOpen);
             }
 
-
+            //Swivel Claw Code
             while (gamepad2.right_trigger > 0.3){
                 robot.clawTilt.setPower(gamepad2.right_trigger);
             }
@@ -107,10 +109,53 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             }
             robot.clawTilt.setPower(0);
 
-
+           //Dpad buttons
+           while (gamepad1.dpad_up){
+               moveForward(DpadPower * slow);
+           }
+           stopDriveTrainMotors();
+           while (gamepad1.dpad_down){
+               moveBackward(DpadPower * slow);
+           }
+           stopDriveTrainMotors();
+           while (gamepad1.dpad_left){
+               moveLeft(DpadPower * slow);
+           }
+           stopDriveTrainMotors();
+           while (gamepad1.dpad_right){
+               moveRight(DpadPower * slow);
+           }
+           stopDriveTrainMotors();
 
 
 
         }
+    }
+
+    public void moveRight (double power){
+
+        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(power);
+        robot.DriveLeftBack.setPower(power);   robot.DriveRightBack.setPower(-power);
+    }
+    public void moveLeft (double power){
+        // Left Wheels                         //Right Wheels
+        robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftBack.setPower(-power); robot.DriveRightBack.setPower(power);
+    }
+    public void moveForward (double power){
+        // Left Wheels                         //Right Wheels
+        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftBack.setPower(-power);  robot.DriveRightBack.setPower(-power);
+    }
+    public void moveBackward (double power){
+        // Left Wheels                         //Right Wheels
+        robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(power);
+        robot.DriveLeftBack.setPower(power);  robot.DriveRightBack.setPower(power);
+    }
+    public void stopDriveTrainMotors (){
+        // Left Wheels                         //Right Wheels
+        robot.DriveLeftFront.setPower(0);      robot.DriveRightFront.setPower(0);
+        robot.DriveRightBack.setPower(0);      robot.DriveLeftBack.setPower(0);
+
     }
 }
