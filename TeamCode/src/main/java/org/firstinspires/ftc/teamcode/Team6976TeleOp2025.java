@@ -76,6 +76,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * mag);
 
+            //Dpad Controls
             while (gamepad1.dpad_up){
                 moveForward(DpadPower * mag);
             }
@@ -124,8 +125,6 @@ public class Team6976TeleOp2025 extends LinearOpMode {
                 robot.clawTilt.setPower(-gamepad2.left_trigger);
             }
             robot.clawTilt.setPower(0);
-
-           //Dpad buttons
 
 
 
