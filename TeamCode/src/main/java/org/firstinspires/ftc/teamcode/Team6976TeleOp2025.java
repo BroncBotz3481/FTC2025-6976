@@ -15,6 +15,9 @@ public class Team6976TeleOp2025 extends LinearOpMode {
     public static double defaultSlideSpeed = 0.9;
     public static double slowArmModifier = 0.55;
     public static double DpadPower = 0.5;
+    public static double DefaultDriveTrainSpeed = 1.0;
+    public static double slowDriveModifier = 0.5;
+
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
@@ -37,7 +40,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
 
         while (opModeIsActive()) {
             boolean speedslow = gamepad1.right_bumper;
-            double mag = speedslow ? 0.5 : 1.0;
+            double mag = speedslow ? slowDriveModifier : DefaultDriveTrainSpeed;
             //Drivetrain controls (Controller 1)
             double y = gamepad1.left_stick_y; // Remember, this is reversed!
             double x = gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
