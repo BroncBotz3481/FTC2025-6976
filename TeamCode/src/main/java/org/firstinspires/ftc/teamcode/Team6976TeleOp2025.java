@@ -14,7 +14,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
     public static double defaultArmSpeed = 0.6;
     public static double defaultSlideSpeed = 0.9;
     public static double slowArmModifier = 0.55;
-    public static double DpadPower = 0.4;
+    public static double DpadPower = 0.5;
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
@@ -73,6 +73,19 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * mag);
 
+            while (gamepad1.dpad_up){
+                moveForward(DpadPower * mag);
+            }
+            while (gamepad1.dpad_down){
+                moveBackward(DpadPower * mag);
+            }
+            while (gamepad1.dpad_left){
+                moveLeft(DpadPower * mag);
+            }
+            while (gamepad1.dpad_right){
+                moveRight(DpadPower * mag);
+            }
+            stopDriveTrainMotors();
 
             // Arm and Slide Power Modifiers
             boolean ArmSlow = gamepad2.a;
@@ -110,22 +123,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.clawTilt.setPower(0);
 
            //Dpad buttons
-           while (gamepad1.dpad_up){
-               moveForward(DpadPower * slow);
-           }
-           stopDriveTrainMotors();
-           while (gamepad1.dpad_down){
-               moveBackward(DpadPower * slow);
-           }
-           stopDriveTrainMotors();
-           while (gamepad1.dpad_left){
-               moveLeft(DpadPower * slow);
-           }
-           stopDriveTrainMotors();
-           while (gamepad1.dpad_right){
-               moveRight(DpadPower * slow);
-           }
-           stopDriveTrainMotors();
+
 
 
 
