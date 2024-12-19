@@ -14,7 +14,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
     public static double defaultArmSpeed = 0.6;
     public static double defaultSlideSpeed = 0.9;
     public static double slowArmModifier = 0.55;
-    public static double DpadPower = 0.5;
+    public static double DpadPower = 1;
     public static double DefaultDriveTrainSpeed = 1.0;
     public static double slowDriveModifier = 0.5;
 
@@ -40,7 +40,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
 
         while (opModeIsActive()) {
             boolean speedslow = gamepad1.right_bumper;
-            double mag = speedslow ? slowDriveModifier : DefaultDriveTrainSpeed;
+            double mag = speedslow ? slowDriveModifier : 1.0;
             //Drivetrain controls (Controller 1)
             double y = gamepad1.left_stick_y; // Remember, this is reversed!
             double x = gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
@@ -77,19 +77,16 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             robot.DriveRightBack.setPower(backRightPower * mag);
 
             //Dpad Controls
-            while (gamepad1.dpad_up){
+            if (gamepad1.dpad_up){
                 moveForward(DpadPower * mag);
-            }
-            while (gamepad1.dpad_down){
+            } else if (gamepad1.dpad_down){
                 moveBackward(DpadPower * mag);
-            }
-            while (gamepad1.dpad_left){
+            } else if (gamepad1.dpad_left){
                 moveLeft(DpadPower * mag);
-            }
-            while (gamepad1.dpad_right){
+            } else if (gamepad1.dpad_right){
                 moveRight(DpadPower * mag);
             }
-            stopDriveTrainMotors();
+            
 
             // Arm and Slide Power Modifiers
             boolean ArmSlow = gamepad2.a;
@@ -132,12 +129,12 @@ public class Team6976TeleOp2025 extends LinearOpMode {
         }
     }
 
-    public void moveRight (double power){
+    public void moveLeft (double power){
 
         robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(power);
         robot.DriveLeftBack.setPower(power);   robot.DriveRightBack.setPower(-power);
     }
-    public void moveLeft (double power){
+    public void moveRight (double power){
         // Left Wheels                         //Right Wheels
         robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(-power);
         robot.DriveLeftBack.setPower(-power); robot.DriveRightBack.setPower(power);
