@@ -86,7 +86,7 @@ public class Team6976TeleOp2025 extends LinearOpMode {
             } else if (gamepad1.dpad_right){
                 moveRight(DpadPower * mag);
             }
-            
+
 
             // Arm and Slide Power Modifiers
             boolean ArmSlow = gamepad2.a;
